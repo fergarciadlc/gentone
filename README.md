@@ -31,7 +31,7 @@ where:
 	-t	Time of the signal in seconds	(default: 1 s)
 	-s 	Sampling frequency in Hertz 	(default: 44100 Hz)
 	-b 	Bit depth, only 16 or 8			(default: 16 bits)
-	-w  waveform: <sine> (default)
+	-w      waveform: <sine> (default)
 	              <square>
 				  <triangle>
 				  <sawtooth>
