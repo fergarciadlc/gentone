@@ -30,11 +30,11 @@ where:
 ### Options:
 	-t	Time of the signal in seconds	(default: 1 s)
 	-s 	Sampling frequency in Hertz 	(default: 44100 Hz)
-	-b 	Bit depth, only 16 or 8			(default: 16 bits)
+	-b 	Bit depth, only 16 or 8		(default: 16 bits)
 	-w      waveform: <sine> (default)
-	              <square>
-				  <triangle>
-				  <sawtooth>
+	                  <square>
+		          <triangle>
+			  <sawtooth>
 	-N 	filename (default: "[freq]Hz--waveform--date--time.wav")
 
 Type `gentone -h` to see the usage and help.
