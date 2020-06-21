@@ -29,12 +29,15 @@ where:
 
 ### Options:
 	-t	Time of the signal in seconds	(default: 1 s)
+	-a 	Amplitude of the signal (0-1)   (default: 1)
 	-s 	Sampling frequency in Hertz 	(default: 44100 Hz)
 	-b 	Bit depth, only 16 or 8		(default: 16 bits)
-	-w      waveform: <sine> (default)
-	                  <square>
+	-w      Waveform:   <sine>   (default)
+	                   <square>
 		          <triangle>
 			  <sawtooth>
+	-d	Phase Shift in degrees 		(default: 0)
+	-r	Phase Shift in radians		(default: 0)
 	-N 	filename (default: "[freq]Hz--waveform--date--time.wav")
 
 Type `gentone -h` to see the usage and help.
@@ -52,6 +55,7 @@ Values:
   Duration  = 5.00 s
   Amplitude = 1.00
   Waveform = 'sine'
+  Phase Shift = 0.0000 rad
   Fs = 44100.00 Hz
   Bit depth = 16 bits
 ```
