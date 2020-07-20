@@ -2,7 +2,7 @@
 
 Command-line program for writing audio wav files of pure tones and synth waveforms.
 
-![Generated Signals](example.png)
+![Generated Signals](examples.png)
 
 ## Installation
 
