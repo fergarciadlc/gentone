@@ -2,6 +2,8 @@
 
 Command-line program for writing audio wav files of pure tones and synth waveforms.
 
+![Generated Signals](example.png)
+
 ## Installation
 
 Use `gcc` to compile.

@@ -1,12 +1,11 @@
-/*
- * gentone.c
+/* gentone.c
  * 
- * gentone is a Command-line program to generate a 
- * Waveform Audio Format (wav) file of a pure tone
+ * gentone is a Command-line program for writing audio wav files 
+ * of pure tones and synth waveforms.
  *
  * Compile: gcc gentone.c waveform.c savewav.c -o gentone
- * by Fernando Garcia de la Cruz (fergarciadlc)
- * 2020
+ * by Fernando Garcia de la Cruz (fergarciadlc), 2020
+ * Last update: 20-July-2020
  */
 #include<ctype.h>
 #include<stdio.h>
@@ -14,8 +13,6 @@
 #include<unistd.h>
 #include<time.h>
 #include<string.h>
-
-#define VERSION 2.2f
 
 double *waveform(double,double,double,char *, double, double);
   int   savewav(double,double,int,char *,double *);
@@ -104,7 +101,7 @@ int main (int argc, char **argv) {
       }
     }
     if (help){
-    	printf("%s v%.1f - 2020 by Fernando Garcia de la Cruz\n\n", argv[0],VERSION);
+    	printf("%s - 2020 by Fernando Garcia de la Cruz\n\n", argv[0]);
     	printf("Tone wav generator\n");
     	printf(usage,argv[0]);
     	printf("\n");
@@ -193,7 +190,6 @@ int main (int argc, char **argv) {
   	sprintf(filename,"%.2fHz--%s%s.wav",frequency, bufferwaveform, buffer);
   }
 
-// getsenx(frequency, duration in samples, sampling frequency, waveform)
   x = waveform(frequency,duration*Fs,Fs,bufferwaveform, amplitude, phase);
   if (x==0){ //check for errors
   	fprintf(stderr, "%s syntax error: invalid waveform \n", argv[0]);
@@ -204,8 +200,6 @@ int main (int argc, char **argv) {
   savewav(duration*Fs, Fs, bits, filename, x);
   free(x);
 
-  //checking flags and values
-  //printf ("fflag = %d, tflag = %d, sflag = %d, bflag = %d\n", fflag, tflag, sflag, bflag);
   printf("File: '%s' generated.\n", filename);
   printf("\nValues:\n");
   printf("  Frequency = %.2f Hz\n", frequency);

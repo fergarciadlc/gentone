@@ -13,7 +13,7 @@ double *waveform(double frequency, double samples, double Fs, char *wave, double
 	double *y;
 	if (strcmp(wave,"sine") == 0){
 		y=(double *)malloc((int)samples*sizeof(double));
-		for (i=0; i<samples; i++){ //Getting samples
+		for (i=0; i<samples; i++){ 
 			x=2*pi*(frequency/Fs)*(double)i + phase;
 			y[i] = amp*sin(x);
 		}
@@ -22,7 +22,7 @@ double *waveform(double frequency, double samples, double Fs, char *wave, double
 	
 	if (strcmp(wave,"square") == 0){
 		y=(double *)malloc((int)samples*sizeof(double));
-		for (i=0; i<samples; i++){ //Getting samples
+		for (i=0; i<samples; i++){ 
 			x=2*pi*(frequency/Fs)*(double)i + phase;
 			y[i] = sin(x);
 			if (y[i] > 0) y[i] = amp;
@@ -32,18 +32,18 @@ double *waveform(double frequency, double samples, double Fs, char *wave, double
 		return(y);
 	}
 
-	if (strcmp(wave,"sawtooth") == 0){ //https://en.wikipedia.org/wiki/Sawtooth_wave
+	if (strcmp(wave,"sawtooth") == 0){ 
 		y=(double *)malloc((int)samples*sizeof(double));
-		for (i=0; i<samples; i++){ //Getting samples
+		for (i=0; i<samples; i++){ 
 			x=(2*pi*(frequency/Fs)*(double)i-pi)/2 + phase/2;
 			y[i] = -(2*amp/pi)*atan(cos(x)/sin(x));
 		}
 		return(y);
 	}
 
-	if (strcmp(wave,"triangle") == 0){ //https://en.wikipedia.org/wiki/Triangle_wave (absolute of sawtooth)
+	if (strcmp(wave,"triangle") == 0){ // (absolute of sawtooth)
 		y=(double *)malloc((int)samples*sizeof(double));
-		for (i=0; i<samples; i++){ //Getting samples
+		for (i=0; i<samples; i++){ 
 			x=2*pi*(frequency/Fs)*(double)i-(pi/2) + phase;
 			y[i] = 2*fabs(-(2*amp/pi)*atan(cos(x/2)/sin(x/2)))-amp;
 		}
