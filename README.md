@@ -2,7 +2,7 @@
 
 Command-line program for writing audio wav files of pure tones and synth waveforms.
 
-![Generated Signals](examples.png)
+![gentone](https://user-images.githubusercontent.com/29163881/89087346-a3178880-d359-11ea-9ffe-6f3fc0f47ede.PNG)
 
 ## Installation
 
